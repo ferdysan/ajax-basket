@@ -13,12 +13,12 @@ $(document).ready(function(){
     $('.container').append('<div class="quadratino"><span></span></dvi>')
   }
 
-
-
   $('.quadratino').click(function(data){
 
+//mi definisco una variabile da usare per selezionare solo il quadrato cliccato
     var quadrato = $(this);
-    
+
+    //nell'ajax inserisco una funzione number con il valore ritornato per portarlo fuori dalla funzione
     $.ajax({
       url : 'https://www.boolean.careers/api/random/int',
       method: 'GET',
@@ -27,13 +27,14 @@ $(document).ready(function(){
       }
     });
 
+//mi porto fuori il valore della mia api e lo richiamo tramite una funziona esterna
      function number(numero_success) {
          var numero = numero_success.response;
 
          if(numero <= 5){
-           quadrato.addClass('yellow').removeClass('green').text(numero);
+           quadrato.addClass('yellow').removeClass('green').children().text(numero);
          }else{
-          quadrato.addClass('green').removeClass('yellow').text(numero);
+          quadrato.addClass('green').removeClass('yellow').children().text(numero);
          }
      }
 

@@ -15,6 +15,9 @@
   height: 99px;
   border: 1px solid green;
   float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .yellow{
