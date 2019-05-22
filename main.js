@@ -1,43 +1,17 @@
-// Ciao ragazzi, esercizio per oggi pomeriggio (repo: ajax-griglia):
-//
-// Creare una griglia 6x6, ad ogni click su un riquadro parte una richiesta AJAX che prende un numero random da 1 a 9 (utilizzare l'API https://www.boolean.careers/api/random/int).
-// Se è <= 5 il quadrato diventa giallo, se è > di 5 il quadrato diventa verde.
-// Il numero ottenuto appare al centro del quadrato.
-// mi raccomando, l'obiettivo dell'esercizio è giocare con ajax, non diventare matti a generare la griglia!
-// Potete tranquillamente disegnarla direttamente nell'html per cominciare, POI, quando le chiamate ajax funzionano e il codice fa tutto quello che deve fare (cambiare colore al riquadro e inserire il numero), allora potete generare la griglia con jQuery, se vi fa piacere
+// ciao ragazzi, esercizio per oggi (repo: ajax-basket):
+// Utilizzare l’API: https://www.boolean.careers/api/array/basket?n=numberPlayers
+// Chiedere all’utente quanti giocatori vuole generare. Chiedere all’API i giocatori e stampare a schermo una card per ogni giocatore attraverso handlebars.
+// Inizialmente chiamate l'API con un numero fisso stabilito da voi, in modo da interrogare l'API nel modo corretto e stilare le card. Poi aggiungete la richiesta del numero dei giocatori all'utente
 
-$(document).ready(function(){
 
-  //genero una griglia di quadratini
-  for(var i =0; i <36; i++){
-    $('.container').append('<div class="quadratino"><span></span></dvi>')
-  }
+//creare un template con Handlebars
 
-  $('.quadratino').click(function(data){
 
-//mi definisco una variabile da usare per selezionare solo il quadrato cliccato
-    var quadrato = $(this);
 
-    //nell'ajax inserisco una funzione number con il valore ritornato per portarlo fuori dalla funzione
-    $.ajax({
-      url : 'https://www.boolean.careers/api/random/int',
-      method: 'GET',
-      success: function(data){
-        number(data);
-      }
-    });
 
-//mi porto fuori il valore della mia api e lo richiamo tramite una funziona esterna
-     function number(numero_success) {
-         var numero = numero_success.response;
+//poi tramite la api di boolean generare un numeri di oggetti giocatore
 
-         if(numero <= 5){
-           quadrato.addClass('yellow').removeClass('green').children().text(numero);
-         }else{
-          quadrato.addClass('green').removeClass('yellow').children().text(numero);
-         }
-     }
 
-  });
 
-});
+
+//successivamente stampare nel template tutti gli oggetti giocatore

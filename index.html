@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -13,8 +14,31 @@
 
     </div>
 
+
+
+
     <script src="main.js">
 
+    </script>
+
+   <!--Template handlebars-->
+    <script id="template-statistiche" type="text/x-handlebars-template">
+      <h1 class="container-codice-giocatore"></h1>
+      <div class="punti">
+        <h2>Punti Fatti: <span>{{punti_fatti}}</span></h2>
+      </div>
+      <div class="rimbalzi">
+        <h2>Rimbalzi: <span>{{rimbalzi}}</span></h2>
+      </div>
+      <div class="falli">
+        <h2>Falli: <span>{{falli}}</span></h2>
+      </div>
+      <div class="tiri_2">
+        <h2>Tiri da 2 punti: <span>{{tiri_2}}</span></h2>
+      </div>
+      <div class="tiri_3">
+        <h2>Tiri da 3 punti: <span>{{tiri_3}}</span></h2>
+      </div>
     </script>
 
   </body>
