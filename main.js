@@ -13,9 +13,12 @@ $(document).ready(function(){
     $('.container').append('<div class="quadratino"><span></span></dvi>')
   }
 
-  var quadrato = $(this);
+
 
   $('.quadratino').click(function(data){
+
+    var quadrato = $(this);
+    
     $.ajax({
       url : 'https://www.boolean.careers/api/random/int',
       method: 'GET',
@@ -28,9 +31,9 @@ $(document).ready(function(){
          var numero = numero_success.response;
 
          if(numero <= 5){
-           $('.quadratino').addClass('yellow').text(numero);
+           quadrato.addClass('yellow').removeClass('green').text(numero);
          }else{
-          $('.quadratino').addClass('green').text(numero);
+          quadrato.addClass('green').removeClass('yellow').text(numero);
          }
      }
 
