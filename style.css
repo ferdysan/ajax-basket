@@ -1,0 +1,26 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  width:600px;
+  height: 600px;
+  border: 1px solid red;
+}
+
+.quadratino{
+  width: 99px;
+  height: 99px;
+  border: 1px solid green;
+  float: left;
+}
+
+.yellow{
+  background-color: yellow;
+}
+
+.green{
+  background-color: green;
+}
