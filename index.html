@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <h2>Genera statistiche Giocatori Basket 2019</h2>
+    <button id="bottone" type="button" name="button">GENERA</button>
 
     <div class="container">
+
 
 
     </div>
@@ -22,8 +25,8 @@
     </script>
 
    <!--Template handlebars-->
-    <script id="template-statistiche" type="text/x-handlebars-template">
-      <h1 class="container-codice-giocatore"></h1>
+    <script id="template-basket" type="text/x-handlebars-template">
+      <h1 class="container-codice-giocatore">{{codice_giocatore}}</h1>
       <div class="punti">
         <h2>Punti Fatti: <span>{{punti_fatti}}</span></h2>
       </div>
