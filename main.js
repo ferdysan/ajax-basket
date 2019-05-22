@@ -3,13 +3,13 @@
 // Chiedere all’utente quanti giocatori vuole generare. Chiedere all’API i giocatori e stampare a schermo una card per ogni giocatore attraverso handlebars.
 // Inizialmente chiamate l'API con un numero fisso stabilito da voi, in modo da interrogare l'API nel modo corretto e stilare le card. Poi aggiungete la richiesta del numero dei giocatori all'utente
 
-
-
-
-
 $(document).ready(function(){
 
+
   $('#bottone').click(function(){
+    
+//ad ogni click all'inizio resetto il contenuto precedente
+    $('.container').empty();
 
     // vado a leggere il valore inserito dall'utente
     var numero_giocatori = $('#numero_giocatori').val();
@@ -26,7 +26,7 @@ $(document).ready(function(){
         giocatori_basket(data.response);
       },
       'error': function(){
-        alert('qualcosa non ha funzionato');
+        alert('Inserisci un numero');
       }
     });
 
@@ -44,8 +44,9 @@ $(document).ready(function(){
 
 
   function giocatori_basket(giocatori){
+
     //mi salvo il valore dell'array di oggetto all'interno di una variabile per comodità
-    
+
     var container_giocatori = giocatori;
     var statistiche_giocatori='';
 
@@ -65,6 +66,5 @@ $(document).ready(function(){
 
     }
   }
-
 
 });
