@@ -3,24 +3,38 @@
 // Chiedere all’utente quanti giocatori vuole generare. Chiedere all’API i giocatori e stampare a schermo una card per ogni giocatore attraverso handlebars.
 // Inizialmente chiamate l'API con un numero fisso stabilito da voi, in modo da interrogare l'API nel modo corretto e stilare le card. Poi aggiungete la richiesta del numero dei giocatori all'utente
 
+
+
+
+
 $(document).ready(function(){
+
   $('#bottone').click(function(){
+
+    // vado a leggere il valore inserito dall'utente
+    var numero_giocatori = $('#numero_giocatori').val();
+
     $.ajax({
       'url':'https://www.boolean.careers/api/array/basket',
       'method': 'GET',
+      // passo questo valore tramite la variabile all'api ajax
       'data':{
-        'n':10
+        'n':numero_giocatori
       },
       'success': function(data){
+        //mi dichiaro una funzione per portare il response del mio ajax fuori
         giocatori_basket(data.response);
       },
       'error': function(){
         alert('qualcosa non ha funzionato');
       }
     });
+
+    //reset dell'input
+    $('#numero_giocatori').val('');
   });
 
-  // creare un template con Handlebars
+  // creo un template con Handlebars
   var template_basketer = $('#template-basket').html();
 
   var lista_function = Handlebars.compile(template_basketer);
@@ -30,6 +44,8 @@ $(document).ready(function(){
 
 
   function giocatori_basket(giocatori){
+    //mi salvo il valore dell'array di oggetto all'interno di una variabile per comodità
+    
     var container_giocatori = giocatori;
     var statistiche_giocatori='';
 

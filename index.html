@@ -9,6 +9,7 @@
   </head>
   <body>
     <h2>Genera statistiche Giocatori Basket 2019</h2>
+    <input id="numero_giocatori" type="text" name="" value="" placeholder="inserisci un numero">
     <button id="bottone" type="button" name="button">GENERA</button>
 
     <div class="container">
@@ -26,22 +27,24 @@
 
    <!--Template handlebars-->
     <script id="template-basket" type="text/x-handlebars-template">
-      <h1 class="container-codice-giocatore">{{codice_giocatore}}</h1>
-      <div class="punti">
-        <h2>Punti Fatti: <span>{{punti_fatti}}</span></h2>
-      </div>
-      <div class="rimbalzi">
-        <h2>Rimbalzi: <span>{{rimbalzi}}</span></h2>
-      </div>
-      <div class="falli">
-        <h2>Falli: <span>{{falli}}</span></h2>
-      </div>
-      <div class="tiri_2">
-        <h2>Tiri da 2 punti: <span>{{tiri_2}}</span></h2>
-      </div>
-      <div class="tiri_3">
-        <h2>Tiri da 3 punti: <span>{{tiri_3}}</span></h2>
-      </div>
+       <div class="container_giocatori">
+          <h1 class="codice-giocatore">{{codice_giocatore}}</h1>
+          <div class="punti">
+            <h2>Punti Fatti: <span>{{punti_fatti}}</span></h2>
+          </div>
+          <div class="rimbalzi">
+            <h2>Rimbalzi: <span>{{rimbalzi}}</span></h2>
+          </div>
+          <div class="falli">
+            <h2>Falli: <span>{{falli}}</span></h2>
+          </div>
+          <div class="tiri_2">
+            <h2>Tiri da 2 punti: <span>{{tiri_2}}</span></h2>
+          </div>
+          <div class="tiri_3">
+            <h2>Tiri da 3 punti: <span>{{tiri_3}}</span></h2>
+          </div>
+      <div>
     </script>
 
   </body>

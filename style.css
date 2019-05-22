@@ -8,4 +8,15 @@
   width:600px;
   height: 600px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.container_giocatori{
+  margin-left: 20px;
+  width: 200px;
+  border: 1px solid black;
+
 }
