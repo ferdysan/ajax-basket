@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 
   $('#bottone').click(function(){
-    
+
 //ad ogni click all'inizio resetto il contenuto precedente
     $('.container').empty();
 
@@ -33,7 +33,7 @@ $(document).ready(function(){
     //reset dell'input
     $('#numero_giocatori').val('');
   });
-
+//test
   // creo un template con Handlebars
   var template_basketer = $('#template-basket').html();
 
